@@ -45,6 +45,6 @@ export class LinuxEditor extends Editor {
    * @param networkInterface Network interface to read
    */
   async getDns() {
-    return await readFileAsLines(RESOLV_PATH)
+    return readFileAsLines(RESOLV_PATH)
   }
 }
