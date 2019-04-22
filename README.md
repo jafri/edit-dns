@@ -1,6 +1,8 @@
-# edit-dns
+# edit-dns [![Build Status](https://travis-ci.com/jafri/edit-dns.svg?branch=master)](https://travis-ci.com/jafri/edit-dns)
 
 > 0-dependancy TS library to load, save and recover DNS files
+
+[Docs](https://jafri.github.io/edit-dns/)
 
 ## Install
 NPM
