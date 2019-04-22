@@ -29,13 +29,24 @@ export class LinuxEditor extends Editor {
   }
 
   /**
+   * Check if name server exists
+   *
+   * @param nameserver Name of the nameserver to find if exists
+   */
+  async exists(nameserver: string) {
+    const currentResolvLines = await this.getDns()
+    const formattedNs = this.formatNs(nameserver)
+    return currentResolvLines.find(ns => ns === formattedNs)
+  }
+
+  /**
    * Updates the list of DNS addresses for a particular network interface
    *
    * @param networkInterface Network interface to update
    * @param dnsList List of DNS addresses to set
    */
   async setDns(dnsList: string[], savedLines: string[] = []) {
-    const fullFileLines = dnsList.map(savedNs => `nameserver ${savedNs}`).concat(savedLines)
+    const fullFileLines = dnsList.map(ns => this.formatNs(ns)).concat(savedLines)
     const text = fullFileLines.join('\n')
 
     const { stderr, error, stdout } = await exec(
@@ -53,5 +64,9 @@ export class LinuxEditor extends Editor {
    */
   async getDns() {
     return readFileAsLines(RESOLV_PATH)
+  }
+
+  formatNs(nameserver: string) {
+    return `nameserver ${nameserver}`
   }
 }

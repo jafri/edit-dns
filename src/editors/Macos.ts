@@ -28,6 +28,17 @@ export class MacosEditor extends Editor {
   }
 
   /**
+   * Check if name server exists
+   *
+   * @param nameserver Name of the nameserver to find if exists
+   */
+  async exists(nameserver: string) {
+    const currentInterface = await this.getNetworkInterface()
+    const nameservers = await this.getDns(currentInterface)
+    return nameservers.find(ns => ns === nameserver)
+  }
+
+  /**
    * Fetches the current network interface and updates class object
    */
   async updateNetworkInterface() {
