@@ -1,6 +1,6 @@
 {
   "name": "edit-dns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "0-dependancy TS library to load, save and recover DNS files",
   "keywords": [
     "dns",
