@@ -52,9 +52,6 @@ export class LinuxEditor extends Editor {
     const { stderr, error, stdout } = await exec(
       `rm -f ${RESOLV_PATH} && echo ${text} > ${RESOLV_PATH}`
     )
-    console.log('Stderr:', stderr)
-    console.log('Stdout:', stdout)
-    console.log('Error:', error)
   }
 
   /**
