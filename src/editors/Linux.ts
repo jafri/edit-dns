@@ -1,5 +1,6 @@
-import { readFileAsLines, writeFileFromLines } from '../utils'
+import { readFileAsLines } from '../utils'
 import { Editor } from './Editor'
+import { exec } from 'exec-root'
 
 const RESOLV_PATH = '/etc/resolv.conf'
 
@@ -35,8 +36,14 @@ export class LinuxEditor extends Editor {
    */
   async setDns(dnsList: string[], savedLines: string[] = []) {
     const fullFileLines = dnsList.map(savedNs => `nameserver ${savedNs}`).concat(savedLines)
+    const text = fullFileLines.join('\n')
 
-    await writeFileFromLines(RESOLV_PATH, fullFileLines)
+    const { stderr, error, stdout } = await exec(
+      `rm -f ${RESOLV_PATH} && echo ${text} > ${RESOLV_PATH}`
+    )
+    console.log('Stderr:', stderr)
+    console.log('Stdout:', stdout)
+    console.log('Error:', error)
   }
 
   /**

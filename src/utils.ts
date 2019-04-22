@@ -10,7 +10,3 @@ export const readFileAsLines = async (path: string) => {
   const data = await readFileAsync(path, 'utf8')
   return data.split('\n')
 }
-
-export const writeFileFromLines = async (path: string, lines: string[]) => {
-  await writeFileAsync(path, lines.join('\n'))
-}
