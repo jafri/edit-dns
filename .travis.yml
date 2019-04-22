@@ -11,7 +11,8 @@ os:
 node_js:
   - '8'
 script:
-  - npm install && sudo npm run test:prod && sudo npm run build
+  - if [[ "$TRAVIS_OS_NAME" == "linux" || "$TRAVIS_OS_NAME" == "osx" ]]; then npm install && sudo npm run test:prod && sudo npm run build; fi
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm install && npm run test:prod && npm run build; fi
 before_install: 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -; fi
