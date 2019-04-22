@@ -4,6 +4,10 @@ cache:
     - ~/.npm
 notifications:
   email: false
+os:
+  - linux
+  - osx
+  # - windows
 node_js:
   - '11'
   - '8'
