@@ -7,6 +7,7 @@ export class WindowsEditor extends Editor {
    * @param dnsList List of new DNS addresses to apply
    */
   async load(dnsList: string[]) {
+    this.savedNameservers = dnsList
     await this.updateNetworkInterface()
     await this.setDns(this.networkInterface, dnsList)
   }
@@ -15,15 +16,14 @@ export class WindowsEditor extends Editor {
    * Saves current user's list of DNs addresses
    */
   async save() {
-    await this.updateNetworkInterface()
-    this.savedNameservers = await this.getDns(this.networkInterface)
+    // Doesn't do anything
   }
 
   /**
    * Set's DNS list to currently saved list
    */
   async recover() {
-    await this.load(this.savedNameservers)
+    await this.removeDns(this.networkInterface, this.savedNameservers)
   }
 
   /**
@@ -40,8 +40,27 @@ export class WindowsEditor extends Editor {
    * @param dnsList List of DNS addresses to set
    */
   async setDns(networkInterface: string, dnsList: string[]) {
-    const joinedDnsList = dnsList.length ? dnsList.join(' ') : 'empty'
-    return nonSudoExec(`networksetup -setdnsservers "${networkInterface}" ${joinedDnsList}`)
+    let idx = 1
+    for (const ns of dnsList) {
+      await nonSudoExec(
+        `netsh interface ipv4 add dnsservers name="${networkInterface}" ${ns} index=${idx} validate=no`
+      )
+      idx++
+    }
+  }
+
+  /**
+   * Deletes the list of DNS addresses for a particular network interface
+   *
+   * @param networkInterface Network interface to update
+   * @param dnsList List of DNS addresses to set
+   */
+  async removeDns(networkInterface: string, dnsList: string[]) {
+    for (const ns of dnsList) {
+      await nonSudoExec(
+        `netsh interface ipv4 delete dnsservers name="${networkInterface}" ${ns} validate=no`
+      )
+    }
   }
 
   /**
@@ -50,9 +69,9 @@ export class WindowsEditor extends Editor {
    * @param networkInterface Network interface to read
    */
   async getDns(networkInterface: string): Promise<string[]> {
-    const { stdout } = await nonSudoExec(`networksetup -getdnsservers "${networkInterface}"`)
+    const { stdout } = await nonSudoExec(`netsh interface ipv4 show config`)
 
-    if (stdout && !/'/.test(stdout)) {
+    if (stdout) {
       return stdout.split('\n').filter(line => line)
     } else {
       return []
@@ -63,9 +82,14 @@ export class WindowsEditor extends Editor {
    * Get current network interface
    */
   async getNetworkInterface() {
-    const { stdout } = await nonSudoExec(
-      `networksetup -listnetworkserviceorder | grep $(route get example.com | grep interface | awk '{print $2}') | awk 'gsub(/.*Hardware Port: |,.*/,"")'`
-    )
-    return stdout.trim()
+    const { stdout } = await nonSudoExec(`netsh interface show interface`)
+    const results = stdout
+      .split('\n')
+      .filter(line => line)
+      .map(line => line.split('\t'))
+    const resultInterface = results.find(
+      result => result.length === 4 && result[0] === 'Enabled' && result[1] === 'Connected'
+    ) || ['', '', '', '']
+    return resultInterface[3]
   }
 }

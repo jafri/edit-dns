@@ -27,7 +27,13 @@ import DnsEditor from 'edit-dns'
     // Load new DNS settings
     await DnsEditor.load(['1.1.1.1'])
 
+    // Check DNS entry exists
+    console.log(await DnsEditor.exists('1.1.1.1')) // true
+
     // Recover saved settings
     await DnsEditor.recover()
+
+    // Check DNS entry does not exist
+    console.log(await DnsEditor.exists('1.1.1.1')) // false
 })()
 ```

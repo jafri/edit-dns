@@ -7,9 +7,8 @@ notifications:
 os:
   - linux
   - osx
-  # - windows
+  - windows
 node_js:
-  - '11'
   - '8'
 script:
   - npm install && sudo npm run test:prod && sudo npm run build

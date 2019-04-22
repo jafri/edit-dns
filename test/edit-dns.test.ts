@@ -4,7 +4,7 @@ import DnsEditor from '../src/edit-dns'
  * Read test
  */
 describe('Read DNS Test', () => {
-  if (process.platform === 'darwin') {
+  if (process.platform === 'darwin' || process.platform === 'win32') {
     it('Fetches network interface', async () => {
       await DnsEditor.updateNetworkInterface()
       expect(DnsEditor.networkInterface).toBeTruthy()
