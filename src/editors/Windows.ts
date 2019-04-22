@@ -27,6 +27,17 @@ export class WindowsEditor extends Editor {
   }
 
   /**
+   * Check if name server exists
+   *
+   * @param nameserver Name of the nameserver to find if exists
+   */
+  async exists(nameserver: string) {
+    const fullConfigLines = await this.getDns(this.networkInterface)
+    const regexp = new RegExp(nameserver)
+    return fullConfigLines.find(line => regexp.test(line))
+  }
+
+  /**
    * Fetches the current network interface and updates class object
    */
   async updateNetworkInterface() {
@@ -82,14 +93,22 @@ export class WindowsEditor extends Editor {
    * Get current network interface
    */
   async getNetworkInterface() {
-    const { stdout } = await nonSudoExec(`netsh interface show interface`)
+    const { stdout, stderr } = await nonSudoExec(`netsh interface show interface`)
+    console.log('Netint stdout:', stdout)
+    console.log('Netint stderr:', stderr)
     const results = stdout
       .split('\n')
       .filter(line => line)
       .map(line => line.split('\t'))
+
+    console.log('Netint results:', results)
+
     const resultInterface = results.find(
       result => result.length === 4 && result[0] === 'Enabled' && result[1] === 'Connected'
     ) || ['', '', '', '']
+
+    console.log('Netint resultInterface:', resultInterface)
+
     return resultInterface[3]
   }
 }
