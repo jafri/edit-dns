@@ -22,7 +22,7 @@ export class Editor {
 
   async saveDataToFile() {
     if (!existsSync(paths.data)) {
-      mkdirSync(paths.data)
+      mkdirSync(paths.data, { recursive: true })
     }
 
     const data = JSON.stringify(
