@@ -46,10 +46,6 @@ const linux = (name: string) => {
 }
 
 const envPaths = (name: string, options?: any) => {
-  if (typeof name !== 'string') {
-    throw new TypeError(`Expected string, got ${typeof name}`)
-  }
-
   options = Object.assign({ suffix: 'nodejs' }, options)
 
   if (options.suffix) {
