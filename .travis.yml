@@ -1,7 +1,5 @@
 language: node_js
-cache:
-  directories:
-    - ~/.npm
+cache: npm
 notifications:
   email: false
 os:
@@ -10,6 +8,8 @@ os:
   - windows
 node_js:
   - '8'
+# Needed to make sure doesn't get stuck on windows
+env: - YARN_GPG=no
 script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" || "$TRAVIS_OS_NAME" == "osx" ]]; then npm install && sudo npm run test:prod && sudo npm run build; fi
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm install && npm run test:prod && npm run build; fi
