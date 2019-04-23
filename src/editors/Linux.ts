@@ -5,6 +5,10 @@ import { exec } from 'exec-root'
 const RESOLV_PATH = '/etc/resolv.conf'
 
 export class LinuxEditor extends Editor {
+  constructor(name: string = 'DefaultDns') {
+    super(name)
+  }
+
   /**
    * Sets current network interface's DNS
    *
@@ -12,6 +16,7 @@ export class LinuxEditor extends Editor {
    */
   async load(dnsList: string[]) {
     await this.setDns(dnsList)
+    this.addedNameservers = dnsList
   }
 
   /**
@@ -19,12 +24,14 @@ export class LinuxEditor extends Editor {
    */
   async save() {
     this.savedResolvFileLines = await this.getDns()
+    await this.saveDataToFile()
   }
 
   /**
    * Set's DNS list to currently saved list
    */
   async recover() {
+    await this.loadDataFromFile()
     await this.setDns([], this.savedResolvFileLines)
   }
 

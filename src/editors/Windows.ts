@@ -2,14 +2,20 @@ import { nonSudoExec } from '../utils'
 import { Editor } from './Editor'
 
 export class WindowsEditor extends Editor {
+  constructor(name: string = 'DefaultDns') {
+    super(name)
+  }
+
   /**
    *
    * @param dnsList List of new DNS addresses to apply
    */
   async load(dnsList: string[]) {
-    this.savedNameservers = dnsList
     await this.updateNetworkInterface()
     await this.setDns(this.networkInterface, dnsList)
+
+    this.addedNameservers = dnsList
+    await this.saveDataToFile()
   }
 
   /**
@@ -23,7 +29,8 @@ export class WindowsEditor extends Editor {
    * Set's DNS list to currently saved list
    */
   async recover() {
-    await this.removeDns(this.networkInterface, this.savedNameservers)
+    await this.loadDataFromFile()
+    await this.removeDns(this.networkInterface, this.addedNameservers)
   }
 
   /**
@@ -82,8 +89,9 @@ export class WindowsEditor extends Editor {
   async getDns(networkInterface: string): Promise<string[]> {
     const { stdout } = await nonSudoExec(`netsh interface ipv4 show config`)
 
+    console.log('Get DNS:', stdout)
     if (stdout) {
-      return stdout.split('\n').filter(line => line)
+      return stdout.split('\r\n').filter(line => line)
     } else {
       return []
     }
@@ -97,9 +105,9 @@ export class WindowsEditor extends Editor {
     console.log('Netint stdout:', stdout)
     console.log('Netint stderr:', stderr)
     const results = stdout
-      .split('\n')
+      .split('\r\n')
       .filter(line => line)
-      .map(line => line.split('\t'))
+      .map(line => line.split(/\s+/))
 
     console.log('Netint results:', results)
 

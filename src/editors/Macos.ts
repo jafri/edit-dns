@@ -2,6 +2,10 @@ import { nonSudoExec } from '../utils'
 import { Editor } from './Editor'
 
 export class MacosEditor extends Editor {
+  constructor(name: string = 'DefaultDns') {
+    super(name)
+  }
+
   /**
    * Sets current network interface's DNS
    *
@@ -10,6 +14,7 @@ export class MacosEditor extends Editor {
   async load(dnsList: string[]) {
     await this.updateNetworkInterface()
     await this.setDns(this.networkInterface, dnsList)
+    this.addedNameservers = dnsList
   }
 
   /**
@@ -18,12 +23,14 @@ export class MacosEditor extends Editor {
   async save() {
     await this.updateNetworkInterface()
     this.savedNameservers = await this.getDns(this.networkInterface)
+    await this.saveDataToFile()
   }
 
   /**
    * Set's DNS list to currently saved list
    */
   async recover() {
+    await this.loadDataFromFile()
     await this.load(this.savedNameservers)
   }
 

@@ -20,20 +20,22 @@ yarn add edit-dns
 ```js
 import DnsEditor from 'edit-dns'
 
+const dnsEditor = new DnsEditor('TestApp')
+
 (async () => {
     // Saves current DNS settings
-    await DnsEditor.save()
+    await dnsEditor.save()
 
     // Load new DNS settings
-    await DnsEditor.load(['1.1.1.1'])
+    await dnsEditor.load(['1.1.1.1'])
 
     // Check DNS entry exists
-    console.log(await DnsEditor.exists('1.1.1.1')) // true
+    console.log(await dnsEditor.exists('1.1.1.1')) // true
 
     // Recover saved settings
-    await DnsEditor.recover()
+    await dnsEditor.recover()
 
     // Check DNS entry does not exist
-    console.log(await DnsEditor.exists('1.1.1.1')) // false
+    console.log(await dnsEditor.exists('1.1.1.1')) // false
 })()
 ```

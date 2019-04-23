@@ -2,11 +2,11 @@ import { MacosEditor, WindowsEditor, LinuxEditor } from './editors'
 
 let editor: any
 if (process.platform === 'darwin') {
-  editor = new MacosEditor()
+  editor = MacosEditor
 } else if (process.platform === 'win32') {
-  editor = new WindowsEditor()
+  editor = WindowsEditor
 } else if (process.platform === 'linux') {
-  editor = new LinuxEditor()
+  editor = LinuxEditor
 } else {
   console.error('Only Macos, Windows and Linux supported.')
 }
