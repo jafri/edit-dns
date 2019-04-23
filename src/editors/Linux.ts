@@ -28,7 +28,7 @@ export class LinuxEditor extends Editor {
   }
 
   /**
-   * Set's DNS list to currently saved list
+   * Set's DNS list to currently saved lists
    */
   async recover() {
     await this.loadDataFromFile()
