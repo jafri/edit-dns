@@ -10,27 +10,19 @@ os:
   - windows
 node_js:
   - '8'
-
-stages:
-  - before_install
-  - install
-  - after_success
+script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" || "$TRAVIS_OS_NAME" == "osx" ]]; then npm install && sudo npm run test:prod && sudo npm run build; fi
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm install && npm run test:prod && npm run build; fi
+before_install: 
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install nodejs; fi
 
 jobs:
   include:
-    - stage: install
+    - stage: release
       script:
-        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; fi
-        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -; fi
-        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install nodejs; fi
-    - stage: before_install
-      script:
-        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; fi
-        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -; fi
-        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install nodejs; fi
-    - stage: after_success
-      script:
-        - npm run travis-deploy-once "npm run report-coverage"
+        - npm run report-coverage
         - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy-docs; fi
         - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run semantic-release; fi
 
