@@ -26,6 +26,7 @@ export class Editor {
 
     const data = JSON.stringify(
       {
+        pid: process.pid,
         addedNameservers: this.addedNameservers,
         savedNameservers: this.savedNameservers,
         savedResolvFileLines: this.savedResolvFileLines,

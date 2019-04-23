@@ -9,7 +9,7 @@ export const writeFileAsync = promisify(writeFile)
 
 export const readFileAsLines = async (path: string) => {
   const data = await readFileAsync(path, 'utf8')
-  return data.split('\n')
+  return data.split('\n').map(line => line)
 }
 
 export const mkkdirRecursive = (targetDir: string) => {

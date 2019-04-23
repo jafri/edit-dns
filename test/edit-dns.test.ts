@@ -1,6 +1,6 @@
 import DnsEditor from '../src/edit-dns'
 
-const APP_NAME = 'EOSDNS'
+const APP_NAME = 'TestApp'
 
 /**
  * Read test
