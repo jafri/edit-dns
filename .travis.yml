@@ -8,7 +8,6 @@ os:
   - windows
 node_js:
   - '8'
-# Needed to make sure doesn't get stuck on windows
 env: - YARN_GPG=no
 script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" || "$TRAVIS_OS_NAME" == "osx" ]]; then npm install && sudo npm run test:prod && sudo npm run build; fi
