@@ -31,7 +31,7 @@ export class MacosEditor extends Editor {
    */
   async recover() {
     await this.loadDataFromFile()
-    await this.load(this.savedNameservers)
+    await this.setDns(this.networkInterface, this.savedNameservers)
   }
 
   /**
@@ -40,7 +40,9 @@ export class MacosEditor extends Editor {
    * @param nameserver Name of the nameserver to find if exists
    */
   async exists(nameserver: string) {
-    const currentInterface = await this.getNetworkInterface()
+    const currentInterface = this.networkInterface
+      ? this.networkInterface
+      : await this.getNetworkInterface()
     const nameservers = await this.getDns(currentInterface)
     return nameservers.find(ns => ns === nameserver)
   }

@@ -1,10 +1,12 @@
 import DnsEditor from '../src/edit-dns'
 
+const APP_NAME = 'EOSDNS'
+
 /**
  * Read test
  */
 describe('Read DNS Test', () => {
-  const dnsEditor = new DnsEditor('TestApp')
+  const dnsEditor = new DnsEditor(APP_NAME)
 
   if (process.platform === 'darwin' || process.platform === 'win32') {
     it('Fetches network interface', async () => {
