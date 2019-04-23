@@ -3,8 +3,6 @@ import envPaths from '../paths'
 import * as path from 'path'
 import { existsSync } from 'fs'
 
-const paths = envPaths('MyApp')
-
 export class Editor {
   [key: string]: any
 
@@ -17,12 +15,13 @@ export class Editor {
 
   constructor(name: string = 'DefaultDns') {
     this.appName = name
-    this.dataPath = path.join(paths.data, `${this.appName}.json`)
+    this.paths = envPaths(name)
+    this.dataPath = path.join(this.paths.data, `${name}.json`)
   }
 
   async saveDataToFile() {
-    if (!existsSync(paths.data)) {
-      mkkdirRecursive(paths.data)
+    if (!existsSync(this.paths.data)) {
+      mkkdirRecursive(this.paths.data)
     }
 
     const data = JSON.stringify(
