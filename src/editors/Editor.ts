@@ -1,7 +1,7 @@
-import { readFileAsync, writeFileAsync } from '../utils'
+import { readFileAsync, writeFileAsync, mkkdirRecursive } from '../utils'
 import envPaths from '../paths'
 import * as path from 'path'
-import { existsSync, mkdirSync } from 'fs'
+import { existsSync } from 'fs'
 
 const paths = envPaths('MyApp')
 
@@ -22,7 +22,7 @@ export class Editor {
 
   async saveDataToFile() {
     if (!existsSync(paths.data)) {
-      mkdirSync(paths.data, { recursive: true })
+      mkkdirRecursive(paths.data)
     }
 
     const data = JSON.stringify(
