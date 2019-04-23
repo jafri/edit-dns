@@ -56,9 +56,10 @@ export class LinuxEditor extends Editor {
     const fullFileLines = dnsList.map(ns => this.formatNs(ns)).concat(savedLines)
     const text = fullFileLines.join('\n')
 
-    const { stderr, error, stdout } = await exec(
-      `rm -f ${RESOLV_PATH} && echo ${text} > ${RESOLV_PATH}`
-    )
+    console.log('Setting DNS')
+    console.log(`rm -f ${RESOLV_PATH} && echo ${text} > ${RESOLV_PATH}`)
+
+    await exec(`rm -f ${RESOLV_PATH} && echo ${text} > ${RESOLV_PATH}`, { name: this.appName })
   }
 
   /**
@@ -67,6 +68,9 @@ export class LinuxEditor extends Editor {
    * @param networkInterface Network interface to read
    */
   async getDns() {
+    console.log('Get DNS')
+    console.log(await readFileAsLines(RESOLV_PATH))
+
     return readFileAsLines(RESOLV_PATH)
   }
 

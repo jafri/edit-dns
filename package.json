@@ -1,6 +1,6 @@
 {
   "name": "edit-dns",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "0-dependancy TS library to load, save and recover DNS files",
   "keywords": [
     "dns",
@@ -118,6 +118,6 @@
     "typescript": "^3.4.4"
   },
   "dependencies": {
-    "exec-root": "^1.0.4"
+    "exec-root": "^1.0.5"
   }
 }

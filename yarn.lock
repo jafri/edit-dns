@@ -1803,9 +1803,9 @@ esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
-exec-root@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.4.tgz#b66369d3585558cfb5a5f2c442217c0d5612a578"
+exec-root@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.5.tgz#6c1b79b01ebbdffe24cf6dda6291589e081442bd"
 
 exec-sh@^0.2.0:
   version "0.2.2"
