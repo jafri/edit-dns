@@ -918,6 +918,18 @@ img { max-width: 100%; }
 		<li class="current tsd-kind-class">
 			<a href="macoseditor.html" class="tsd-kind-icon">Macos<wbr>Editor</a>
 			<ul>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a href="macoseditor.html#constructor" class="tsd-kind-icon">constructor</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="macoseditor.html#addednameservers" class="tsd-kind-icon">added<wbr>Nameservers</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="macoseditor.html#appname" class="tsd-kind-icon">app<wbr>Name</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="macoseditor.html#datapath" class="tsd-kind-icon">data<wbr>Path</a>
+				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a href="macoseditor.html#networkinterface" class="tsd-kind-icon">network<wbr>Interface</a>
 				</li>
@@ -928,6 +940,9 @@ img { max-width: 100%; }
 					<a href="macoseditor.html#savedresolvfilelines" class="tsd-kind-icon">saved<wbr>Resolv<wbr>File<wbr>Lines</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="macoseditor.html#exists" class="tsd-kind-icon">exists</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="macoseditor.html#getdns" class="tsd-kind-icon">get<wbr>Dns</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -936,11 +951,17 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="macoseditor.html#load" class="tsd-kind-icon">load</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a href="macoseditor.html#loaddatafromfile" class="tsd-kind-icon">load<wbr>Data<wbr>From<wbr>File</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="macoseditor.html#recover" class="tsd-kind-icon">recover</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="macoseditor.html#save" class="tsd-kind-icon">save</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a href="macoseditor.html#savedatatofile" class="tsd-kind-icon">save<wbr>Data<wbr>ToFile</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="macoseditor.html#setdns" class="tsd-kind-icon">set<wbr>Dns</a>
@@ -959,20 +980,44 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-variable">
 			<a href="../globals.html#editor" class="tsd-kind-icon">editor</a>
 		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="../globals.html#env" class="tsd-kind-icon">env</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="../globals.html#homedir" class="tsd-kind-icon">homedir</a>
+		</li>
 		<li class=" tsd-kind-variable">
 			<a href="../globals.html#nonsudoexec" class="tsd-kind-icon">non<wbr>Sudo<wbr>Exec</a>
 		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="../globals.html#paths" class="tsd-kind-icon">paths</a>
+		</li>
 		<li class=" tsd-kind-variable">
 			<a href="../globals.html#readfileasync" class="tsd-kind-icon">read<wbr>File<wbr>Async</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="../globals.html#tmpdir" class="tsd-kind-icon">tmpdir</a>
 		</li>
 		<li class=" tsd-kind-variable">
 			<a href="../globals.html#writefileasync" class="tsd-kind-icon">write<wbr>File<wbr>Async</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#readfileaslines" class="tsd-kind-icon">read<wbr>File<wbr>AsLines</a>
+			<a href="../globals.html#envpaths" class="tsd-kind-icon">env<wbr>Paths</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#linux" class="tsd-kind-icon">linux</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#macos" class="tsd-kind-icon">macos</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#writefilefromlines" class="tsd-kind-icon">write<wbr>File<wbr>From<wbr>Lines</a>
+			<a href="../globals.html#mkkdirrecursive" class="tsd-kind-icon">mkkdir<wbr>Recursive</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#readfileaslines" class="tsd-kind-icon">read<wbr>File<wbr>AsLines</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#windows" class="tsd-kind-icon">windows</a>
 		</li>
 	</ul>
 </nav>
@@ -991,13 +1036,26 @@ img { max-width: 100%; }
 				</li>
 			</ul>
 		</section>
+		<section class="tsd-panel tsd-kind-class">
+			<h3 class="tsd-before-signature">Indexable</h3>
+			<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
+					<section class="tsd-index-section ">
+						<h3>Constructors</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="macoseditor.html#constructor" class="tsd-kind-icon">constructor</a></li>
+						</ul>
+					</section>
 					<section class="tsd-index-section tsd-is-inherited">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#addednameservers" class="tsd-kind-icon">added<wbr>Nameservers</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#appname" class="tsd-kind-icon">app<wbr>Name</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#datapath" class="tsd-kind-icon">data<wbr>Path</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#networkinterface" class="tsd-kind-icon">network<wbr>Interface</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#savednameservers" class="tsd-kind-icon">saved<wbr>Nameservers</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#savedresolvfilelines" class="tsd-kind-icon">saved<wbr>Resolv<wbr>File<wbr>Lines</a></li>
@@ -1006,11 +1064,14 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#exists" class="tsd-kind-icon">exists</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#getdns" class="tsd-kind-icon">get<wbr>Dns</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#getnetworkinterface" class="tsd-kind-icon">get<wbr>Network<wbr>Interface</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#load" class="tsd-kind-icon">load</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#loaddatafromfile" class="tsd-kind-icon">load<wbr>Data<wbr>From<wbr>File</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#recover" class="tsd-kind-icon">recover</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#save" class="tsd-kind-icon">save</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="macoseditor.html#savedatatofile" class="tsd-kind-icon">save<wbr>Data<wbr>ToFile</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#setdns" class="tsd-kind-icon">set<wbr>Dns</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="macoseditor.html#updatenetworkinterface" class="tsd-kind-icon">update<wbr>Network<wbr>Interface</a></li>
 						</ul>
@@ -1018,8 +1079,68 @@ img { max-width: 100%; }
 				</div>
 			</section>
 		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Constructors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<a name="constructor" class="tsd-anchor"></a>
+				<h3>constructor</h3>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Macos<wbr>Editor<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="macoseditor.html" class="tsd-signature-type">MacosEditor</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Overrides <a href="editor.html">Editor</a>.<a href="editor.html#constructor">constructor</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L4">editors/Macos.ts:4</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;DefaultDns&quot;</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="macoseditor.html" class="tsd-signature-type">MacosEditor</a></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<a name="addednameservers" class="tsd-anchor"></a>
+				<h3>added<wbr>Nameservers</h3>
+				<div class="tsd-signature tsd-kind-icon">added<wbr>Nameservers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#addednameservers">addedNameservers</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L11">editors/Editor.ts:11</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<a name="appname" class="tsd-anchor"></a>
+				<h3>app<wbr>Name</h3>
+				<div class="tsd-signature tsd-kind-icon">app<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#appname">appName</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L15">editors/Editor.ts:15</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<a name="datapath" class="tsd-anchor"></a>
+				<h3>data<wbr>Path</h3>
+				<div class="tsd-signature tsd-kind-icon">data<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#datapath">dataPath</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L16">editors/Editor.ts:16</a></li>
+					</ul>
+				</aside>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 				<a name="networkinterface" class="tsd-anchor"></a>
 				<h3>network<wbr>Interface</h3>
@@ -1027,7 +1148,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#networkinterface">networkInterface</a></p>
 					<ul>
-						<li>Defined in editors/Editor.ts:4</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L14">editors/Editor.ts:14</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1038,7 +1159,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#savednameservers">savedNameservers</a></p>
 					<ul>
-						<li>Defined in editors/Editor.ts:2</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L12">editors/Editor.ts:12</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1049,13 +1170,44 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#savedresolvfilelines">savedResolvFileLines</a></p>
 					<ul>
-						<li>Defined in editors/Editor.ts:3</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L13">editors/Editor.ts:13</a></li>
 					</ul>
 				</aside>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="exists" class="tsd-anchor"></a>
+				<h3>exists</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">exists<span class="tsd-signature-symbol">(</span>nameserver<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L42">editors/Macos.ts:42</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Check if name server exists</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>nameserver: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Name of the nameserver to find if exists</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="getdns" class="tsd-anchor"></a>
 				<h3>get<wbr>Dns</h3>
@@ -1066,7 +1218,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in editors/Macos.ts:55</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L71">editors/Macos.ts:71</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1097,7 +1249,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in editors/Macos.ts:70</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L84">editors/Macos.ts:84</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1119,7 +1271,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in editors/Macos.ts:10</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L14">editors/Macos.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1140,6 +1292,24 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<a name="loaddatafromfile" class="tsd-anchor"></a>
+				<h3>load<wbr>Data<wbr>From<wbr>File</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">load<wbr>Data<wbr>From<wbr>File<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#loaddatafromfile">loadDataFromFile</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L43">editors/Editor.ts:43</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="recover" class="tsd-anchor"></a>
 				<h3>recover</h3>
@@ -1150,7 +1320,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in editors/Macos.ts:26</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L32">editors/Macos.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1172,7 +1342,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in editors/Macos.ts:18</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L23">editors/Macos.ts:23</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1180,6 +1350,24 @@ img { max-width: 100%; }
 								<p>Saves current user&#39;s list of DNs addresses</p>
 							</div>
 						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<a name="savedatatofile" class="tsd-anchor"></a>
+				<h3>save<wbr>Data<wbr>ToFile</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">save<wbr>Data<wbr>ToFile<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#savedatatofile">saveDataToFile</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L23">editors/Editor.ts:23</a></li>
+							</ul>
+						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
@@ -1194,7 +1382,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in editors/Macos.ts:43</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L61">editors/Macos.ts:61</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1231,7 +1419,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in editors/Macos.ts:33</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Macos.ts#L51">editors/Macos.ts:51</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

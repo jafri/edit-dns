@@ -927,30 +927,79 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-variable">
 			<a href="globals.html#editor" class="tsd-kind-icon">editor</a>
 		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="globals.html#env" class="tsd-kind-icon">env</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="globals.html#homedir" class="tsd-kind-icon">homedir</a>
+		</li>
 		<li class=" tsd-kind-variable">
 			<a href="globals.html#nonsudoexec" class="tsd-kind-icon">non<wbr>Sudo<wbr>Exec</a>
 		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="globals.html#paths" class="tsd-kind-icon">paths</a>
+		</li>
 		<li class=" tsd-kind-variable">
 			<a href="globals.html#readfileasync" class="tsd-kind-icon">read<wbr>File<wbr>Async</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="globals.html#tmpdir" class="tsd-kind-icon">tmpdir</a>
 		</li>
 		<li class=" tsd-kind-variable">
 			<a href="globals.html#writefileasync" class="tsd-kind-icon">write<wbr>File<wbr>Async</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="globals.html#readfileaslines" class="tsd-kind-icon">read<wbr>File<wbr>AsLines</a>
+			<a href="globals.html#envpaths" class="tsd-kind-icon">env<wbr>Paths</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="globals.html#linux" class="tsd-kind-icon">linux</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="globals.html#macos" class="tsd-kind-icon">macos</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="globals.html#writefilefromlines" class="tsd-kind-icon">write<wbr>File<wbr>From<wbr>Lines</a>
+			<a href="globals.html#mkkdirrecursive" class="tsd-kind-icon">mkkdir<wbr>Recursive</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#readfileaslines" class="tsd-kind-icon">read<wbr>File<wbr>AsLines</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="globals.html#windows" class="tsd-kind-icon">windows</a>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<h1 id="edit-dns">edit-dns</h1>
+			<h1 id="edit-dns-build-status">edit-dns <a href="https://travis-ci.com/jafri/edit-dns"><img src="https://travis-ci.com/jafri/edit-dns.svg?branch=master" alt="Build Status"></a></h1>
 			<blockquote>
-				<p>0-dependancy library to load, save and recover DNS files</p>
+				<p>0-dependancy TS library to load, save and recover DNS files</p>
 			</blockquote>
+			<p><a href="https://jafri.github.io/edit-dns/">Docs</a></p>
+			<h2 id="install">Install</h2>
+			<p>NPM</p>
+			<pre><code>npm <span class="hljs-selector-tag">i</span> edit-dns</code></pre><p>Yarn</p>
+			<pre><code>yarn <span class="hljs-keyword">add</span><span class="bash"> edit-dns</span></code></pre><h2 id="usage">Usage</h2>
+			<pre><code class="language-js"><span class="hljs-keyword">import</span> DnsEditor <span class="hljs-keyword">from</span> <span class="hljs-string">'edit-dns'</span>
+
+<span class="hljs-keyword">const</span> dnsEditor = <span class="hljs-keyword">new</span> DnsEditor(<span class="hljs-string">'TestApp'</span>)
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-comment">// Saves current DNS settings</span>
+    <span class="hljs-keyword">await</span> dnsEditor.save()
+
+    <span class="hljs-comment">// Load new DNS settings</span>
+    <span class="hljs-keyword">await</span> dnsEditor.load([<span class="hljs-string">'1.1.1.1'</span>])
+
+    <span class="hljs-comment">// Check DNS entry exists</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span> dnsEditor.exists(<span class="hljs-string">'1.1.1.1'</span>)) <span class="hljs-comment">// true</span>
+
+    <span class="hljs-comment">// Recover saved settings</span>
+    <span class="hljs-keyword">await</span> dnsEditor.recover()
+
+    <span class="hljs-comment">// Check DNS entry does not exist</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span> dnsEditor.exists(<span class="hljs-string">'1.1.1.1'</span>)) <span class="hljs-comment">// false</span>
+})()</code></pre>
 		</div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
@@ -970,16 +1019,24 @@ img { max-width: 100%; }
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#resolv_path" class="tsd-kind-icon">RESOLV_<wbr>PATH</a></li>
 							<li class="tsd-kind-variable"><a href="globals.html#editor" class="tsd-kind-icon">editor</a></li>
+							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#env" class="tsd-kind-icon">env</a></li>
+							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#homedir" class="tsd-kind-icon">homedir</a></li>
 							<li class="tsd-kind-variable"><a href="globals.html#nonsudoexec" class="tsd-kind-icon">non<wbr>Sudo<wbr>Exec</a></li>
+							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#paths" class="tsd-kind-icon">paths</a></li>
 							<li class="tsd-kind-variable"><a href="globals.html#readfileasync" class="tsd-kind-icon">read<wbr>File<wbr>Async</a></li>
+							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#tmpdir" class="tsd-kind-icon">tmpdir</a></li>
 							<li class="tsd-kind-variable"><a href="globals.html#writefileasync" class="tsd-kind-icon">write<wbr>File<wbr>Async</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-function"><a href="globals.html#envpaths" class="tsd-kind-icon">env<wbr>Paths</a></li>
+							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#linux" class="tsd-kind-icon">linux</a></li>
+							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#macos" class="tsd-kind-icon">macos</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#mkkdirrecursive" class="tsd-kind-icon">mkkdir<wbr>Recursive</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#readfileaslines" class="tsd-kind-icon">read<wbr>File<wbr>AsLines</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#writefilefromlines" class="tsd-kind-icon">write<wbr>File<wbr>From<wbr>Lines</a></li>
+							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#windows" class="tsd-kind-icon">windows</a></li>
 						</ul>
 					</section>
 				</div>
@@ -993,7 +1050,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">RESOLV_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"/etc/resolv.conf"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/etc/resolv.conf&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in editors/Linux.ts:4</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Linux.ts#L5">editors/Linux.ts:5</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1003,7 +1060,27 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">editor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in edit-dns.ts:3</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/edit-dns.ts#L3">edit-dns.ts:3</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+				<a name="env" class="tsd-anchor"></a>
+				<h3>env</h3>
+				<div class="tsd-signature tsd-kind-icon">env<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ProcessEnv</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/paths.ts#L6">paths.ts:6</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+				<a name="homedir" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> homedir</h3>
+				<div class="tsd-signature tsd-kind-icon">homedir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;os.homedir()</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/paths.ts#L4">paths.ts:4</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1013,9 +1090,39 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">non<wbr>Sudo<wbr>Exec<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> =&nbsp;promisify(exec)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in utils.ts:5</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/utils.ts#L6">utils.ts:6</a></li>
 					</ul>
 				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+				<a name="paths" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> paths</h3>
+				<div class="tsd-signature tsd-kind-icon">paths<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;envPaths(&#x27;MyApp&#x27;)</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/editors/Editor.ts#L6">editors/Editor.ts:6</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter">
+							<h5>cache<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>temp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+					</ul>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-variable">
 				<a name="readfileasync" class="tsd-anchor"></a>
@@ -1023,7 +1130,17 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">read<wbr>File<wbr>Async<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> =&nbsp;promisify(readFile)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in utils.ts:6</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/utils.ts#L7">utils.ts:7</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+				<a name="tmpdir" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> tmpdir</h3>
+				<div class="tsd-signature tsd-kind-icon">tmpdir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;os.tmpdir()</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/paths.ts#L5">paths.ts:5</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1033,13 +1150,159 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">write<wbr>File<wbr>Async<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> =&nbsp;promisify(writeFile)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in utils.ts:7</li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/utils.ts#L8">utils.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="envpaths" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> env<wbr>Paths</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">env<wbr>Paths<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/paths.ts#L48">paths.ts:48</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>name: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>cache<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>temp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+				<a name="linux" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> linux</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+					<li class="tsd-signature tsd-kind-icon">linux<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/paths.ts#L35">paths.ts:35</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>name: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>cache<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>temp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+				<a name="macos" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> macos</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+					<li class="tsd-signature tsd-kind-icon">macos<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/paths.ts#L8">paths.ts:8</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>name: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>cache<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>temp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="mkkdirrecursive" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> mkkdir<wbr>Recursive</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">mkkdir<wbr>Recursive<span class="tsd-signature-symbol">(</span>targetDir<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/utils.ts#L15">utils.ts:15</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>targetDir: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="readfileaslines" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> read<wbr>File<wbr>AsLines</h3>
@@ -1050,7 +1313,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in utils.ts:9</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/utils.ts#L10">utils.ts:10</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1063,29 +1326,43 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="writefilefromlines" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> write<wbr>File<wbr>From<wbr>Lines</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">write<wbr>File<wbr>From<wbr>Lines<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, lines<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+				<a name="windows" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> windows</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+					<li class="tsd-signature tsd-kind-icon">windows<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in utils.ts:14</li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/0a8efb1/src/paths.ts#L20">paths.ts:20</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>path: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5>lines: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>name: <span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>cache<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>temp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
