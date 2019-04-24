@@ -1,15 +1,22 @@
 import { exec } from 'child_process'
 import { promisify } from 'util'
-import { readFile, writeFile, mkdirSync } from 'fs'
+import { readFile, writeFile, mkdirSync, readlink, unlink, exists } from 'fs'
 import * as path from 'path'
 
 export const nonSudoExec = promisify(exec)
 export const readFileAsync = promisify(readFile)
 export const writeFileAsync = promisify(writeFile)
+export const readlinkAsync = promisify(readlink)
+export const unlinkAsync = promisify(unlink)
+export const existsAsync = promisify(exists)
 
 export const readFileAsLines = async (path: string) => {
   const data = await readFileAsync(path, 'utf8')
-  return data.split('\n').filter(line => line)
+  return data.split('\n')
+}
+
+export const escapeRegExp = (text: string) => {
+  return text.replace(/["]/g, '\\$&')
 }
 
 export const mkkdirRecursive = (targetDir: string) => {

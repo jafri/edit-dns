@@ -19,6 +19,10 @@ describe('Read DNS Test', () => {
     await dnsEditor.save()
   })
 
+  it('Saved DNS config exists', async () => {
+    expect(await dnsEditor.dataFileExists()).toBeTruthy()
+  })
+
   it('Loads new DNS', async () => {
     await dnsEditor.load(['1.1.1.1'])
   })
@@ -35,5 +39,13 @@ describe('Read DNS Test', () => {
   it('Check new DNS was removed', async () => {
     const exists = await dnsEditor.exists('1.1.1.1')
     expect(exists).toBeFalsy()
+  })
+
+  it('Delete saved DNS config', async () => {
+    await dnsEditor.deleteDataFile()
+  })
+
+  it('Saved DNS config does not exist', async () => {
+    expect(await dnsEditor.dataFileExists()).toBeFalsy()
   })
 })

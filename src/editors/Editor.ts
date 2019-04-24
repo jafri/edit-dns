@@ -1,7 +1,6 @@
-import { readFileAsync, writeFileAsync, mkkdirRecursive } from '../utils'
+import { readFileAsync, writeFileAsync, mkkdirRecursive, unlinkAsync, existsAsync } from '../utils'
 import envPaths from '../paths'
 import * as path from 'path'
-import { existsSync } from 'fs'
 
 export class Editor {
   [key: string]: any
@@ -9,6 +8,7 @@ export class Editor {
   addedNameservers: string[] = []
   savedNameservers: string[] = []
   savedResolvFileLines: string[] = []
+  savedResolvSymlink: string = ''
   networkInterface: string = ''
   appName: string = ''
   dataPath: string = ''
@@ -20,7 +20,7 @@ export class Editor {
   }
 
   async saveDataToFile() {
-    if (!existsSync(this.paths.data)) {
+    if (!this.dataFileExists()) {
       mkkdirRecursive(this.paths.data)
     }
 
@@ -30,6 +30,7 @@ export class Editor {
         addedNameservers: this.addedNameservers,
         savedNameservers: this.savedNameservers,
         savedResolvFileLines: this.savedResolvFileLines,
+        savedResolvSymlink: this.savedResolvSymlink,
         networkInterface: this.networkInterface,
         appName: this.appName
       },
@@ -41,14 +42,22 @@ export class Editor {
   }
 
   async loadDataFromFile() {
-    if (!existsSync(this.dataPath)) {
-      return
-    }
+    if (!this.dataFileExists()) return
 
     const data = JSON.parse(await readFileAsync(this.dataPath, 'utf-8'))
 
     for (const [key, value] of Object.entries(data)) {
       this[key] = value
     }
+  }
+
+  async deleteDataFile() {
+    if (!this.dataFileExists()) return
+
+    await unlinkAsync(this.dataPath)
+  }
+
+  async dataFileExists() {
+    return await existsAsync(this.dataPath)
   }
 }

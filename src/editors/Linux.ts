@@ -1,4 +1,4 @@
-import { readFileAsLines } from '../utils'
+import { readFileAsLines, readlinkAsync, escapeRegExp } from '../utils'
 import { Editor } from './Editor'
 import { exec } from 'exec-root'
 
@@ -15,7 +15,7 @@ export class LinuxEditor extends Editor {
    * @param dnsList List of new DNS addresses to apply
    */
   async load(dnsList: string[]) {
-    await this.setDns(dnsList)
+    await this.setDns(dnsList, this.savedResolvFileLines)
     this.addedNameservers = dnsList
   }
 
@@ -24,6 +24,13 @@ export class LinuxEditor extends Editor {
    */
   async save() {
     this.savedResolvFileLines = await this.getDns()
+
+    try {
+      this.savedResolvSymlink = await readlinkAsync(RESOLV_PATH, 'utf8')
+    } catch (e) {
+      console.log(e)
+    }
+
     await this.saveDataToFile()
   }
 
@@ -32,7 +39,7 @@ export class LinuxEditor extends Editor {
    */
   async recover() {
     await this.loadDataFromFile()
-    await this.setDns([], this.savedResolvFileLines)
+    await this.setDns([], this.savedResolvFileLines, this.savedResolvSymlink)
   }
 
   /**
@@ -52,14 +59,19 @@ export class LinuxEditor extends Editor {
    * @param networkInterface Network interface to update
    * @param dnsList List of DNS addresses to set
    */
-  async setDns(dnsList: string[], savedLines: string[] = []) {
+  async setDns(dnsList: string[], savedLines: string[] = [], savedResolvSymlink: string = '') {
     const fullFileLines = dnsList.map(ns => this.formatNs(ns)).concat(savedLines)
     const text = fullFileLines.join('\n')
 
     console.log('Setting DNS')
-    console.log(`rm -f ${RESOLV_PATH} && echo ${text} > ${RESOLV_PATH}`)
+    console.log(`rm -f ${RESOLV_PATH} && echo "${escapeRegExp(text)}" > ${RESOLV_PATH}`)
+    console.log(`Symlink: ${savedResolvSymlink}`)
 
-    await exec(`rm -f ${RESOLV_PATH} && echo ${text} > ${RESOLV_PATH}`, { name: this.appName })
+    const command = savedResolvSymlink
+      ? `ln -s ${savedResolvSymlink} ${RESOLV_PATH}`
+      : `echo "${escapeRegExp(text)}" > ${RESOLV_PATH}`
+
+    await exec(`rm -f ${RESOLV_PATH} && ${command}`, { name: this.appName })
   }
 
   /**

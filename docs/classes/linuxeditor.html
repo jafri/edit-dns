@@ -936,6 +936,9 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a href="linuxeditor.html#savedresolvfilelines" class="tsd-kind-icon">saved<wbr>Resolv<wbr>File<wbr>Lines</a>
 				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="linuxeditor.html#savedresolvsymlink" class="tsd-kind-icon">saved<wbr>Resolv<wbr>Symlink</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="linuxeditor.html#exists" class="tsd-kind-icon">exists</a>
 				</li>
@@ -989,6 +992,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-variable">
 			<a href="../globals.html#readfileasync" class="tsd-kind-icon">read<wbr>File<wbr>Async</a>
 		</li>
+		<li class=" tsd-kind-variable">
+			<a href="../globals.html#readlinkasync" class="tsd-kind-icon">readlink<wbr>Async</a>
+		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
 			<a href="../globals.html#tmpdir" class="tsd-kind-icon">tmpdir</a>
 		</li>
@@ -997,6 +1003,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#envpaths" class="tsd-kind-icon">env<wbr>Paths</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#escaperegexp" class="tsd-kind-icon">escape<wbr>Reg<wbr>Exp</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
 			<a href="../globals.html#linux" class="tsd-kind-icon">linux</a>
@@ -1053,6 +1062,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linuxeditor.html#networkinterface" class="tsd-kind-icon">network<wbr>Interface</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linuxeditor.html#savednameservers" class="tsd-kind-icon">saved<wbr>Nameservers</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linuxeditor.html#savedresolvfilelines" class="tsd-kind-icon">saved<wbr>Resolv<wbr>File<wbr>Lines</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linuxeditor.html#savedresolvsymlink" class="tsd-kind-icon">saved<wbr>Resolv<wbr>Symlink</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -1085,7 +1095,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Overrides <a href="editor.html">Editor</a>.<a href="editor.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L7">editors/Linux.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L7">editors/Linux.ts:7</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1108,7 +1118,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#addednameservers">addedNameservers</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L9">editors/Editor.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L9">editors/Editor.ts:9</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1119,7 +1129,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#appname">appName</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L13">editors/Editor.ts:13</a></li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L14">editors/Editor.ts:14</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1130,7 +1140,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#datapath">dataPath</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L14">editors/Editor.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L15">editors/Editor.ts:15</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1141,7 +1151,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#networkinterface">networkInterface</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L12">editors/Editor.ts:12</a></li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L13">editors/Editor.ts:13</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1152,7 +1162,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#savednameservers">savedNameservers</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L10">editors/Editor.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L10">editors/Editor.ts:10</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1163,7 +1173,18 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#savedresolvfilelines">savedResolvFileLines</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L11">editors/Editor.ts:11</a></li>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L11">editors/Editor.ts:11</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<a name="savedresolvsymlink" class="tsd-anchor"></a>
+				<h3>saved<wbr>Resolv<wbr>Symlink</h3>
+				<div class="tsd-signature tsd-kind-icon">saved<wbr>Resolv<wbr>Symlink<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#savedresolvsymlink">savedResolvSymlink</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L12">editors/Editor.ts:12</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1180,7 +1201,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L43">editors/Linux.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L50">editors/Linux.ts:50</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1211,7 +1232,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L80">editors/Linux.ts:80</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L91">editors/Linux.ts:91</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1234,7 +1255,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L73">editors/Linux.ts:73</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L84">editors/Linux.ts:84</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1256,7 +1277,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L17">editors/Linux.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L17">editors/Linux.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1288,7 +1309,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#loaddatafromfile">loadDataFromFile</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L43">editors/Editor.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L45">editors/Editor.ts:45</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1305,7 +1326,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L33">editors/Linux.ts:33</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L40">editors/Linux.ts:40</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1327,7 +1348,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L25">editors/Linux.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L25">editors/Linux.ts:25</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1350,7 +1371,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="editor.html">Editor</a>.<a href="editor.html#savedatatofile">saveDataToFile</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Editor.ts#L22">editors/Editor.ts:22</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Editor.ts#L23">editors/Editor.ts:23</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1361,13 +1382,13 @@ img { max-width: 100%; }
 				<a name="setdns" class="tsd-anchor"></a>
 				<h3>set<wbr>Dns</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">set<wbr>Dns<span class="tsd-signature-symbol">(</span>dnsList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, savedLines<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">set<wbr>Dns<span class="tsd-signature-symbol">(</span>dnsList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, savedLines<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, savedResolvSymlink<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/4b4130f/src/editors/Linux.ts#L55">editors/Linux.ts:55</a></li>
+								<li>Defined in <a href="https://github.com/jafri/edit-dns/blob/2f5c601/src/editors/Linux.ts#L62">editors/Linux.ts:62</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1385,6 +1406,9 @@ img { max-width: 100%; }
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> savedLines: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> savedResolvSymlink: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
