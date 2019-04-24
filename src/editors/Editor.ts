@@ -20,7 +20,7 @@ export class Editor {
   }
 
   async saveDataToFile() {
-    if (!this.dataFileExists()) {
+    if (!(await this.dataFileExists())) {
       mkkdirRecursive(this.paths.data)
     }
 
@@ -42,7 +42,7 @@ export class Editor {
   }
 
   async loadDataFromFile() {
-    if (!this.dataFileExists()) return
+    if (!(await this.dataFileExists())) return
 
     const data = JSON.parse(await readFileAsync(this.dataPath, 'utf-8'))
 
@@ -52,7 +52,7 @@ export class Editor {
   }
 
   async deleteDataFile() {
-    if (!this.dataFileExists()) return
+    if (!(await this.dataFileExists())) return
 
     await unlinkAsync(this.dataPath)
   }
