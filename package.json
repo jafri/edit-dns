@@ -1,7 +1,7 @@
 {
   "name": "edit-dns",
-  "version": "1.1.4",
-  "description": "0-dependancy TS library to load, save and recover DNS files",
+  "version": "1.1.7",
+  "description": "TS library to load, save and recover DNS files",
   "keywords": [
     "dns",
     "resolv",
