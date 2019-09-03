@@ -1,7 +1,6 @@
 import { readFileAsLines, readlinkAsync, escapeRegExp } from '../utils'
 import { Editor } from './Editor'
 import { exec } from 'exec-root'
-
 const RESOLV_PATH = '/etc/resolv.conf'
 
 export class LinuxEditor extends Editor {
@@ -63,15 +62,16 @@ export class LinuxEditor extends Editor {
     const fullFileLines = dnsList.map(ns => this.formatNs(ns)).concat(savedLines)
     const text = fullFileLines.join('\n')
 
+    const command =
+      savedResolvSymlink !== ''
+        ? `ln -s ${savedResolvSymlink} ${RESOLV_PATH}`
+        : `tee ${RESOLV_PATH} <<< '${escapeRegExp(text)}'`
+
     console.log('Setting DNS')
-    console.log(`rm -f ${RESOLV_PATH} && echo "${escapeRegExp(text)}" > ${RESOLV_PATH}`)
     console.log(`Symlink: ${savedResolvSymlink}`)
+    console.log(`Command: bash -c "rm -f ${RESOLV_PATH}; ${command};"`)
 
-    const command = savedResolvSymlink
-      ? `ln -s ${savedResolvSymlink} ${RESOLV_PATH}`
-      : `echo "${escapeRegExp(text)}" > ${RESOLV_PATH}`
-
-    await exec(`rm -f ${RESOLV_PATH} && ${command}`, { name: this.appName })
+    await exec(`bash -c "rm -f ${RESOLV_PATH}; ${command};"`, { name: this.appName })
   }
 
   /**

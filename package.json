@@ -1,6 +1,6 @@
 {
   "name": "edit-dns",
-  "version": "1.1.9",
+  "version": "1.1.18",
   "description": "TS library to load, save and recover DNS files",
   "keywords": [
     "dns",
@@ -17,7 +17,8 @@
   "module": "dist/edit-dns.es5.js",
   "typings": "dist/types/edit-dns.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "scripts"
   ],
   "author": "Syed Jafri <syed.jafri2@ucalgary.ca>",
   "repository": {
@@ -118,6 +119,6 @@
     "typescript": "^3.4.4"
   },
   "dependencies": {
-    "exec-root": "^1.0.5"
+    "exec-root": "^1.0.9"
   }
 }
