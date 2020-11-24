@@ -1803,9 +1803,9 @@ esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
-exec-root@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.5.tgz#6c1b79b01ebbdffe24cf6dda6291589e081442bd"
+exec-root@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.9.tgz#22f6f37b951b5a24c42a733381b9f23cc0174351"
 
 exec-sh@^0.2.0:
   version "0.2.2"
@@ -2470,8 +2470,8 @@ has@^1.0.1, has@^1.0.3:
     function-bind "^1.1.1"
 
 highlight.js@^9.0.0:
-  version "9.15.6"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.15.6.tgz#72d4d8d779ec066af9a17cb14360c3def0aa57c4"
+  version "9.18.5"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
