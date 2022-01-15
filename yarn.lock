@@ -1803,9 +1803,9 @@ esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
-exec-root@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.5.tgz#6c1b79b01ebbdffe24cf6dda6291589e081442bd"
+exec-root@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.9.tgz#22f6f37b951b5a24c42a733381b9f23cc0174351"
 
 exec-sh@^0.2.0:
   version "0.2.2"
@@ -5726,8 +5726,8 @@ shelljs@0.7.6:
     rechoir "^0.6.2"
 
 shelljs@^0.8.2, shelljs@^0.8.3:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.3.tgz#a7f3319520ebf09ee81275b2368adb286659b097"
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.5.tgz#de055408d8361bed66c669d2f000538ced8ee20c"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
