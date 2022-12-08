@@ -1803,9 +1803,9 @@ esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
-exec-root@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.5.tgz#6c1b79b01ebbdffe24cf6dda6291589e081442bd"
+exec-root@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/exec-root/-/exec-root-1.0.9.tgz#22f6f37b951b5a24c42a733381b9f23cc0174351"
 
 exec-sh@^0.2.0:
   version "0.2.2"
@@ -5127,8 +5127,8 @@ qrcode-terminal@^0.12.0:
   resolved "https://registry.yarnpkg.com/qrcode-terminal/-/qrcode-terminal-0.12.0.tgz#bb5b699ef7f9f0505092a3748be4464fe71b5819"
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
 
 query-string@^6.1.0:
   version "6.4.2"
